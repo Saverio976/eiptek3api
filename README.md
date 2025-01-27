@@ -1850,3 +1850,367 @@ eiptek3api --year 2023 "members__firstname__eq=Xavier"
 ```
 
 </details>
+
+### 23:23 - 2025-01-27
+
+<details>
+<summary>Click for stats (year 2023)</summary>
+
+```bash
+eiptek3api --year 2023 --include-rejected
+```
+
+```json
+{
+    "number_of_projects": 258,
+    "number_of_projects_by_cities": {
+        "Paris": 59,
+        "Lyon": 29,
+        "Toulouse": 19,
+        "Cotonou": 19,
+        "Montpellier": 17,
+        "Strasbourg": 16,
+        "Lille": 15,
+        "Marseille": 15,
+        "Bordeaux": 13,
+        "Nancy": 12,
+        "Nice": 12,
+        "Nantes": 9,
+        "Rennes": 9,
+        "La R\u00e9union": 6,
+        "Barcelona": 4,
+        "Mulhouse": 2,
+        "Berlin": 1,
+        "Bruxelles": 1
+    },
+    "status_all_cities": {
+        "approved": 162,
+        "rejected": 78,
+        "draft": 18
+    },
+    "status_by_cities": {
+        "Paris": {
+            "approved": 38,
+            "rejected": 21
+        },
+        "Nancy": {
+            "approved": 8,
+            "rejected": 4
+        },
+        "Lille": {
+            "approved": 11,
+            "rejected": 4
+        },
+        "Lyon": {
+            "approved": 18,
+            "rejected": 11
+        },
+        "Montpellier": {
+            "approved": 9,
+            "rejected": 7,
+            "draft": 1
+        },
+        "Marseille": {
+            "approved": 9,
+            "rejected": 6
+        },
+        "Toulouse": {
+            "approved": 13,
+            "rejected": 6
+        },
+        "Nantes": {
+            "approved": 6,
+            "rejected": 3
+        },
+        "Nice": {
+            "approved": 9,
+            "rejected": 3
+        },
+        "Bordeaux": {
+            "approved": 9,
+            "rejected": 4
+        },
+        "Strasbourg": {
+            "approved": 9,
+            "rejected": 7
+        },
+        "Rennes": {
+            "approved": 8,
+            "rejected": 1
+        },
+        "Cotonou": {
+            "draft": 17,
+            "approved": 1,
+            "rejected": 1
+        },
+        "La R\u00e9union": {
+            "approved": 6
+        },
+        "Barcelona": {
+            "approved": 4
+        },
+        "Mulhouse": {
+            "approved": 2
+        },
+        "Berlin": {
+            "approved": 1
+        },
+        "Bruxelles": {
+            "approved": 1
+        }
+    },
+    "number_by_envisaged_type": {
+        "solution": 156,
+        "entrepreneurship": 63,
+        "technical": 39
+    },
+    "status_by_envisaged_type": {
+        "entrepreneurship": {
+            "approved": 35,
+            "rejected": 27,
+            "draft": 1
+        },
+        "solution": {
+            "approved": 94,
+            "rejected": 46,
+            "draft": 16
+        },
+        "technical": {
+            "approved": 33,
+            "rejected": 5,
+            "draft": 1
+        }
+    },
+    "number_status_by_tags": {
+        "Mobile Applications": {
+            "approved": 57,
+            "rejected": 38,
+            "draft": 9
+        },
+        "Data Management": {
+            "approved": 9,
+            "rejected": 5,
+            "draft": 3
+        },
+        "Digital Transformation": {
+            "approved": 5,
+            "rejected": 1
+        },
+        "Web Development": {
+            "approved": 41,
+            "rejected": 26,
+            "draft": 7
+        },
+        "Automation": {
+            "approved": 20,
+            "rejected": 4,
+            "draft": 1
+        },
+        "Video Games": {
+            "approved": 36,
+            "rejected": 8,
+            "draft": 1
+        },
+        "Educational Technologies": {
+            "approved": 20,
+            "rejected": 11,
+            "draft": 2
+        },
+        "Game Design": {
+            "approved": 11,
+            "rejected": 2
+        },
+        "AR/VR": {
+            "approved": 8,
+            "draft": 1,
+            "rejected": 1
+        },
+        "Tech for Good": {
+            "approved": 23,
+            "rejected": 6
+        },
+        "Machine Learning": {
+            "approved": 34,
+            "rejected": 11,
+            "draft": 3
+        },
+        "Management Computing": {
+            "approved": 5,
+            "rejected": 4
+        },
+        "Human-Machine Interaction": {
+            "rejected": 4,
+            "approved": 3
+        },
+        "Predictive Analytics": {
+            "approved": 3,
+            "rejected": 1
+        },
+        "Social Networks": {
+            "rejected": 8,
+            "approved": 7,
+            "draft": 1
+        },
+        "Hybrid Applications": {
+            "approved": 4,
+            "rejected": 3
+        },
+        "Esport": {
+            "approved": 3,
+            "rejected": 2
+        },
+        "Signal Processing": {
+            "approved": 4
+        },
+        "Open Source": {
+            "approved": 14,
+            "rejected": 5
+        },
+        "Sharing Platforms": {
+            "rejected": 5,
+            "approved": 3,
+            "draft": 1
+        },
+        "3D Modeling": {
+            "approved": 10,
+            "rejected": 2
+        },
+        "HealthTech": {
+            "approved": 7,
+            "rejected": 6
+        },
+        "High Performance Computing": {
+            "approved": 3
+        },
+        "Big Data": {
+            "approved": 4,
+            "rejected": 1
+        },
+        "Data Analysis": {
+            "approved": 18,
+            "rejected": 11,
+            "draft": 3
+        },
+        "Web Services": {
+            "approved": 10,
+            "rejected": 10,
+            "draft": 1
+        },
+        "Assistive Technologies": {
+            "approved": 6,
+            "rejected": 6,
+            "draft": 1
+        },
+        "Social Innovation": {
+            "approved": 9,
+            "rejected": 7,
+            "draft": 2
+        },
+        "Entertainment Computing": {
+            "approved": 12,
+            "rejected": 1
+        },
+        "Cybersecurity": {
+            "approved": 7,
+            "rejected": 1,
+            "draft": 1
+        },
+        "Blockchain": {
+            "approved": 7,
+            "rejected": 4
+        },
+        "Geolocation": {
+            "rejected": 5,
+            "approved": 3,
+            "draft": 2
+        },
+        "Immersive Technologies": {
+            "approved": 3
+        },
+        "Collaborative Design": {
+            "approved": 4,
+            "rejected": 2
+        },
+        "Project Management": {
+            "approved": 3,
+            "rejected": 3
+        },
+        "Green Technologies": {
+            "approved": 3,
+            "rejected": 1
+        },
+        "Mathematical Modeling": {
+            "approved": 3
+        },
+        "Cloud Computing": {
+            "approved": 1
+        },
+        "M2M Communication": {
+            "approved": 1,
+            "rejected": 1
+        },
+        "E-commerce": {
+            "approved": 3,
+            "rejected": 2,
+            "draft": 1
+        },
+        "Streaming": {
+            "approved": 3
+        },
+        "Voice Recognition": {
+            "approved": 5
+        },
+        "Product Design": {
+            "approved": 1,
+            "rejected": 1
+        },
+        "Robotics": {
+            "approved": 3,
+            "rejected": 1
+        },
+        "Knowledge Management": {
+            "draft": 1,
+            "approved": 1
+        },
+        "Connected Computing": {
+            "draft": 1
+        },
+        "Agricultural Computing": {
+            "draft": 1,
+            "rejected": 1,
+            "approved": 1
+        },
+        "Mobile Computing": {
+            "rejected": 2
+        },
+        "Smart Cities": {
+            "rejected": 1
+        },
+        "Internet of Things": {
+            "approved": 2
+        },
+        "DevOps": {
+            "approved": 6
+        },
+        "FinTech": {
+            "approved": 3
+        },
+        "Cryptocurrencies": {
+            "approved": 2
+        },
+        "Distributed Computing": {
+            "approved": 1
+        },
+        "Agile Development": {
+            "approved": 1,
+            "rejected": 1
+        },
+        "Renewable Energy": {
+            "approved": 1
+        },
+        "Animaux": {
+            "approved": 1
+        }
+    }
+}
+```
