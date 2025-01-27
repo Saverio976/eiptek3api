@@ -73,7 +73,7 @@ wheels = [
 
 [[package]]
 name = "eiptek3api"
-version = "0.0.8"
+version = "0.0.9"
 source = { editable = "." }
 dependencies = [
     { name = "python-dateutil" },

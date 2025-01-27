@@ -18,12 +18,14 @@ def to_dict(obj):
     for k, v in asdict(obj).items():
         if isinstance(v, (Tag, City, Member, Project, Projects)):
             res[k] = v.dict()
-        if (
+        elif (
             isinstance(v, list)
             and len(v) != 0
             and isinstance(v[0], (Tag, City, Member, Project))
         ):
             res[k] = [v_elem.dict for v_elem in v]
+        elif isinstance(v, datetime):
+            res[k] = v.isoformat()
         else:
             res[k] = v
     return res

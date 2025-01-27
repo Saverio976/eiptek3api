@@ -13,6 +13,9 @@ except ModuleNotFoundError:
     from stats import full_stats
 
 
+DUMP_PROJECTS_FILE = "dump_projects.json"
+
+
 def filter_projects(projects: list[Project], filters: list[str]):
     _filters = []
     for _filter in filters:
@@ -21,6 +24,11 @@ def filter_projects(projects: list[Project], filters: list[str]):
         _filters.append((splited_name, split_value))
     return filter_it(projects, _filters)
 
+
+def dump_projects(projects: list[Project]):
+    print(f"Writing {DUMP_PROJECTS_FILE}", file=sys.stderr)
+    with open(DUMP_PROJECTS_FILE, mode="w") as f:
+        json.dump([x.dict() for x in projects], f, indent=4)
 
 def get_bearer():
     try:
@@ -36,11 +44,13 @@ class CMDLINEArg:
     year: int
     include_rejected: bool
     filters: list[str]
+    dump_projects: bool
 
-    def __init__(self, year: int, include_rejected: bool, filters: list[str]):
+    def __init__(self, year: int, include_rejected: bool, filters: list[str], dump_projects):
         self.year = year
         self.include_rejected = include_rejected
         self.filters = filters
+        self.dump_projects = dump_projects
 
 
 def get_cmdline_args():
@@ -62,6 +72,13 @@ def get_cmdline_args():
         help="Include project with status 'rejected'",
     )
     parser.add_argument(
+        "--dump-projects",
+        action="store_const",
+        const=True,
+        default=False,
+        help=f"Write all projects details to a {DUMP_PROJECTS_FILE} file",
+    )
+    parser.add_argument(
         "filters",
         type=str,
         nargs="*",
@@ -73,9 +90,11 @@ def get_cmdline_args():
         year = args.year[0]
     include_rejected = args.include_rejected
     filters = args.filters
-    args_class = CMDLINEArg(year=year, include_rejected=include_rejected, filters=filters)
+    dump_projects = args.dump_projects
+    args_class = CMDLINEArg(year=year, include_rejected=include_rejected, filters=filters, dump_projects=dump_projects)
     print(f"Year: {args_class.year}", file=sys.stderr)
     print(f"Include Rejected: {args_class.include_rejected}", file=sys.stderr)
+    print(f"Dump Projects: {args_class.dump_projects}", file=sys.stderr)
     print(f"Filters: {args_class.filters}", file=sys.stderr)
     return args_class
 
@@ -93,6 +112,8 @@ def main():
     print("Loaded data.", file=sys.stderr)
 
     if len(args.filters) == 0:
+        if args.dump_projects:
+            dump_projects(projects.results)
         print(
             json.dumps(
                 full_stats(projects.results),
@@ -101,7 +122,9 @@ def main():
         )
         return 0
 
-    projs = filter_projects(projects.results, sys.argv[1:])
+    projs = filter_projects(projects.results, args.filters)
+    if args.dump_projects:
+        dump_projects(projs)
     stats = full_stats(projs)
     stats["proj_list"] = [EIP_TEK3_URL + "projects/" + str(proj.id) for proj in projs]
     print(

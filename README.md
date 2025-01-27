@@ -23,7 +23,7 @@ eiptek3api --help
 ```
 
 ```txt
-usage: eiptek3api [-h] [--year YEAR] [--include-rejected] [filters ...]
+usage: eiptek3api [-h] [--year YEAR] [--include-rejected] [--dump-projects] [filters ...]
 
 CLI for https://eip-tek3.epitest.eu stats.
 
@@ -34,8 +34,9 @@ options:
   -h, --help          show this help message and exit
   --year YEAR         2023 for Promo 2026 | 2024 for Promo 2027 | i.e.: the date of the third year for your promo
   --include-rejected  Include project with status 'rejected'
+  --dump-projects     Write all projects details to a dump_projects.json file
 
-Made with 💜 by Saverio976                                                                                                   /1.54s
+Made with 💜 by Saverio976
 ```
 
 ### Examples
@@ -50,6 +51,12 @@ eiptek3api
 
 ```bash
 eiptek3api --include-rejected
+```
+
+#### Dump a file with all projects details
+
+```bash
+eiptek3api --dump-projects
 ```
 
 #### Stats for projects with tags containing 'Machine Learning'
@@ -68,6 +75,12 @@ eiptek3api --year 2023 "tags__label__eq=Machine Learning" "owner_city__name__eq=
 
 ```bash
 eiptek3api --year 2023 "description__contains=eco"
+```
+
+#### Stats for project that have a member with te firstname 'Xavier'
+
+```bash
+eiptek3api --year 2023 "members__firstname__eq=Xavier"
 ```
 
 ---

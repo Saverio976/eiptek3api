@@ -2,3 +2,4 @@
 .bearer
 __pycache__
 dist/*
+dump_projects.json
