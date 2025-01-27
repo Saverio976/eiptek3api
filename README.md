@@ -13,15 +13,58 @@ pypi: <https://pypi.org/project/eiptek3api/>
 
 ## Doc
 
+### Help
+
 ```bash
-# stats for all projects with no filters
+eiptek3api --help
+```
+
+```txt
+usage: eiptek3api [-h] [--year YEAR] [--include-rejected] [filters ...]
+
+CLI for https://eip-tek3.epitest.eu stats.
+
+positional arguments:
+  filters             `field__eq=value` or `path__to__field__eq=value` or `field__contains=value`
+
+options:
+  -h, --help          show this help message and exit
+  --year YEAR         2023 for Promo 2026 | 2024 for Promo 2027 | i.e.: the date of the third year for your promo
+  --include-rejected  Include project with status 'rejected'
+
+Made with 💜 by Saverio976                                                                                                   /1.54s
+```
+
+### Examples
+
+#### Stats for all projects without filters
+
+```bash
 eiptek3api
-# stats for projects with tags containing 'Machine Learning'
-eiptek3api "tags__label__eq=Machine Learning"
-# stats for projects in Paris and tags containing 'Machine Learning'
-eiptek3api "tags__label__eq=Machine Learning" "owner_city__name__eq=Paris"
-# stats for projects containing 'eco' in the description
-eiptek3api "description__contains=eco"
+```
+
+#### Include rejected project
+
+```bash
+eiptek3api --include-rejected
+```
+
+#### Stats for projects with tags containing 'Machine Learning'
+
+```bash
+eiptek3api --year 2023 "tags__label__eq=Machine Learning"
+```
+
+#### Stats for projects in 'Paris' and tags containing 'Machine Learning'
+
+```bash
+eiptek3api --year 2023 "tags__label__eq=Machine Learning" "owner_city__name__eq=Paris"
+```
+
+#### Stats for projects containing 'eco' in the description
+
+```bash
+eiptek3api --year 2023 "description__contains=eco"
 ```
 
 ---
