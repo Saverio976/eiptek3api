@@ -4,6 +4,9 @@ url: <https://eip-tek3.epitest.eu>
 
 pypi: <https://pypi.org/project/eiptek3api/>
 
+> [!TIP]
+> If you want a browser user interface, use [this](https://github.com/Guilhemvnt/super-duper-data) instead.
+
 ## Usage
 
 1. Login to eip website.
