@@ -1,4 +1,5 @@
 import collections
+
 try:
     from eiptek3api.api import Project
 except ModuleNotFoundError:

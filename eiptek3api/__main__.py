@@ -4,7 +4,12 @@ import argparse
 import getpass
 
 try:
-    from eiptek3api.api import Project, api_projects_all, EIP_TEK3_URL, CURRENT_SCHOLAR_YEAR
+    from eiptek3api.api import (
+        Project,
+        api_projects_all,
+        EIP_TEK3_URL,
+        CURRENT_SCHOLAR_YEAR,
+    )
     from eiptek3api.filter import filter_it
     from eiptek3api.stats import full_stats
 except ModuleNotFoundError:
@@ -30,6 +35,7 @@ def dump_projects(projects: list[Project]):
     with open(DUMP_PROJECTS_FILE, mode="w") as f:
         json.dump([x.dict() for x in projects], f, indent=4)
 
+
 def get_bearer():
     try:
         with open(".bearer", "r") as f:
@@ -46,7 +52,9 @@ class CMDLINEArg:
     filters: list[str]
     dump_projects: bool
 
-    def __init__(self, year: int, include_rejected: bool, filters: list[str], dump_projects):
+    def __init__(
+        self, year: int, include_rejected: bool, filters: list[str], dump_projects
+    ):
         self.year = year
         self.include_rejected = include_rejected
         self.filters = filters
@@ -91,7 +99,12 @@ def get_cmdline_args():
     include_rejected = args.include_rejected
     filters = args.filters
     dump_projects = args.dump_projects
-    args_class = CMDLINEArg(year=year, include_rejected=include_rejected, filters=filters, dump_projects=dump_projects)
+    args_class = CMDLINEArg(
+        year=year,
+        include_rejected=include_rejected,
+        filters=filters,
+        dump_projects=dump_projects,
+    )
     print(f"Year: {args_class.year}", file=sys.stderr)
     print(f"Include Rejected: {args_class.include_rejected}", file=sys.stderr)
     print(f"Dump Projects: {args_class.dump_projects}", file=sys.stderr)
