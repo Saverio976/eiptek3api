@@ -1,6 +1,6 @@
 [project]
 name = "eiptek3api"
-version = "0.0.7"
+version = "0.0.8"
 authors = [
   { name="Xavier Mitault", email="xavier.mitault@epitech.eu" },
 ]
@@ -15,8 +15,8 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://gitea.saverio976.ovh/Saverio976/eiptek3-api"
-Issues = "https://gitea.saverio976.ovh/Saverio976/eiptek3-api/issues"
+Homepage = "https://github.com/Saverio976/eiptek3api"
+Issues = "https://github.com/Saverio976/eiptek3api/issues/new/choose"
 
 [project.scripts]
 eiptek3api = "eiptek3api.__main__:main"
