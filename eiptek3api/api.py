@@ -5,7 +5,7 @@ from dataclasses import dataclass, asdict
 from dateutil.parser import parse
 from requests import get
 
-EIP_TEK3_URL = "https://eip-tek3.epitest.eu/"
+EIP_TEK3_URL = "https://eip.epitech.eu/"
 EIP_TEK3_API_URL = EIP_TEK3_URL + "api/"
 
 CURRENT_SCHOLAR_YEAR = datetime.now().year
@@ -329,7 +329,7 @@ def api_projects_count(
         + _include_rejected
     )
     headers = {
-        "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:127.0) Gecko/20100101 Firefox/127.0",
+        "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:134.0) Gecko/20100101 Firefox/134.0",
         "Accept": "application/json, text/plain, */*",
         "Referer": EIP_TEK3_API_URL + "projects?scholar_year" + str(scholar_year),
         "Authorization": "Bearer " + bearer,
@@ -407,13 +407,15 @@ def api_projects(
     if debug:
         print("url=", url, file=sys.stderr)
     headers = {
-        "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:127.0) Gecko/20100101 Firefox/127.0",
+        "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:134.0) Gecko/20100101 Firefox/134.0",
         "Accept": "application/json, text/plain, */*",
         "Referer": EIP_TEK3_API_URL + "projects?scholar_year" + str(scholar_year),
         "Authorization": "Bearer " + bearer,
     }
     res = get(url, headers=headers)
     res.raise_for_status()
+    if debug:
+        print("res text=", res.text, file=sys.stderr)
     return Projects.from_js(res.json())
 
 
@@ -423,7 +425,7 @@ def api_projects_all(
     user_projects: bool = False,
     starred_projects: bool = False,
     include_rejected: bool = False,
-    debug=False,
+    debug: bool = False,
 ):
     """
     Get all projects completed the criterias in parameters

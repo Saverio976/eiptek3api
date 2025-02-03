@@ -18,6 +18,9 @@ except ModuleNotFoundError:
     from stats import full_stats
 
 
+DEBUG = False
+
+
 DUMP_PROJECTS_FILE = "dump_projects.json"
 
 
@@ -121,6 +124,7 @@ def main():
         bearer=bearer,
         scholar_year=args.year,
         include_rejected=args.include_rejected,
+        debug=DEBUG,
     )
     print("Loaded data.", file=sys.stderr)
 
