@@ -1,6 +1,6 @@
 # EIP Stats
 
-url: <https://eip-tek3.epitest.eu>
+url: <https://eip.epitech.eu/>
 
 pypi: <https://pypi.org/project/eiptek3api/>
 
